@@ -36,10 +36,10 @@ Util.buildClassificationGrid = async function(data){
       grid +=  '<a href="../../inv/detail/'+ vehicle.inv_id 
       + '" title="View ' + vehicle.inv_make + ' '+ vehicle.inv_model 
       + 'details"><img src="' + vehicle.inv_thumbnail 
-      +'" alt="Image of '+ vehicle.inv_make + ' ' + vehicle.inv_model 
-      +' on CSE Motors" /></a>'
+      +'" alt="' + vehicle.inv_make + ' ' + vehicle.inv_model 
+      +' on CSE Motors"></a>'
       grid += '<div class="namePrice">'
-      grid += '<hr />'
+      grid += '<hr>'
       grid += '<h2>'
       grid += '<a href="../../inv/detail/' + vehicle.inv_id +'" title="View ' 
       + vehicle.inv_make + ' ' + vehicle.inv_model + ' details">' 
@@ -55,6 +55,29 @@ Util.buildClassificationGrid = async function(data){
     grid += '<p class="notice">Sorry, no matching vehicles could be found.</p>'
   }
   return grid
+}
+
+/* **************************************
+Build the vehicle detail view HTML
+************************************ */
+Util.buildVehicleDetail = async function(data){
+  let detail = '<div id="detail-display">'
+  detail += '<div id="detail-display-image">'
+  detail += '<img src="' + data.inv_image + '" alt="' 
+  + data.inv_make + ' ' + data.inv_model
+  detail += '</div>'
+  detail += '<div id="detail-display-info">'
+  detail += '<h2>' + 'Year: ' + data.inv_year + '</h2>'
+  detail += '<hr>'
+  detail += '<h2>$' + new Intl.NumberFormat('en-US').format(data.inv_price) + '</h2>'
+  detail += '<p>' + data.inv_description + '</p>'
+  detail += '<ul>'
+  detail += '<li><strong>Mileage:</strong> ' + new Intl.NumberFormat('en-US').format(data.inv_miles) + '</li>'
+  detail += '<li><strong>Color:</strong> ' + data.inv_color + '</li>'
+  detail += '</ul>'
+  detail += '</div>'
+  detail += '</div>'
+  return detail
 }
 
 /* ****************************************
