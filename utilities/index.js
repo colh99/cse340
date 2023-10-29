@@ -64,7 +64,7 @@ Util.buildVehicleDetail = async function(data){
   let detail = '<div id="detail-display">'
   detail += '<div id="detail-display-image">'
   detail += '<img src="' + data.inv_image + '" alt="' 
-  + data.inv_make + ' ' + data.inv_model
+  + data.inv_make + ' ' + data.inv_model + '"> '
   detail += '</div>'
   detail += '<div id="detail-display-info">'
   detail += '<h2>' + 'Year: ' + data.inv_year + '</h2>'

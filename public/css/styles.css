@@ -87,20 +87,14 @@ header #tools {
 nav {
   background-color: #333;
   color: #fff;
+  flex-wrap: wrap;
 }
 
 nav ul {
   list-style: none;
   margin: auto;
   padding: 0;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 0%;
-}
-
-nav li {
-  padding: 11px 0px;
+  width: 100%;
 }
 
 nav a:hover {
@@ -111,11 +105,23 @@ nav a {
   color: #fff;
   text-decoration: none;
   padding: 10px;
+  width: max-content;
+  margin: auto;
+  width: 100%;
+  display: block;
+  text-align: center;
+  border-top: 1px solid #555;
 }
 
 @media screen and (min-width: 768px) {
   nav a {
     padding: 10px 30px;
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: center;
+    width: 100%;
   }
 }
 
@@ -215,6 +221,7 @@ nav a {
   display: flex;
   flex-wrap: wrap;
   margin: auto;
+  padding: 0;
   justify-content: center;
 }
 
@@ -268,8 +275,18 @@ nav a {
 
   #detail-display-info {
     flex-basis: 28%;
-    margin-left: 0.5em;
+    margin-left: 2em;
   }
+}
+
+#detail-display img {
+  max-width: 100%;
+  height: auto;
+  box-shadow: 2px 2px 6px #33333380;
+}
+
+#detail-display-image {
+  text-align: center;
 }
 
 #detail-display-info h2 {

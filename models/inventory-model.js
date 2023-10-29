@@ -31,9 +31,7 @@ async function getInventoryByClassificationId(classification_id) {
 async function getVehicleDetails(inv_id) {
   try {
     const data = await pool.query(
-      `SELECT * FROM public.inventory AS i 
-      JOIN public.classification AS c 
-      ON i.classification_id = c.classification_id 
+      `SELECT * FROM public.inventory AS i  
       WHERE i.inv_id = $1`,
       [inv_id]
     )
