@@ -55,6 +55,12 @@ body {
   }
 }
 
+ul.notice {
+  color: red;
+  font-style: italic;
+  font-weight: bold;
+}
+
 main {
   padding: 10px;
 }
