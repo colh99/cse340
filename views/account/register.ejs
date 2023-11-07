@@ -5,8 +5,8 @@
     <% } else {
       res.redirect('/')
     } %>
-
-
+    
+<%- messages() %>
 
 <% if (errors) { %>
     <ul class="notice">
@@ -19,11 +19,11 @@
 <!-- Register view -->
 <form action="/account/register" method="post">
     <label for="firstname">First Name:</label>
-    <input type="text" name="account_firstname" id="firstname" required>
+    <input type="text" name="account_firstname" id="accountFirstname" required value="<%= locals.account_firstname %>">
     <label for="lastname">Last Name:</label>
-    <input type="text" name="account_lastname" id="lastname" required>
+    <input type="text" name="account_lastname" id="lastname" required value="<%= locals.account_lastname %>">
     <label for="email">Email:</label>
-    <input type="email" name="account_email" id="email" required>
+    <input type="email" name="account_email" id="email" required value="<%= locals.account_email %>">
     <label for="password">Password:</label>
     <input type="password" name="account_password" id="password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$" required>
     <span>There must be at least 12 characters, one must be a number, one must be a lowercase letter, one must be a capital letter, and one must be a non-alphanumeric character.</span>

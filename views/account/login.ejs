@@ -8,10 +8,11 @@
 
 <%- messages() %>
 
+
 <!-- Login view -->
-<form action="">
+<form id="loginForm" action="/account/login" method="post">
     <label for="email">Email:</label>
-    <input type="email" name="account_email" id="email" required>
+    <input type="email" name="account_email" id="email" required value="<%= locals.account_email %>">
     <label for="password">Password:</label>
     <input type="password" name="account_password" id="password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$" required>
     <span>There must be at least 12 characters, one must be a number, one must be a lowercase letter, one must be a capital letter, and one must be a non-alphanumeric character.</span>
