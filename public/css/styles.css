@@ -303,3 +303,33 @@ nav a {
   list-style: none;
   padding: 0;
 }
+
+
+/************ Forms ***************/
+
+form {
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+input {
+  padding: 0.5em;
+  margin: 0 0 1em 0;
+  width: 100%;
+}
+
+input[type="submit"] {
+  margin: auto;
+  font-size: 1em;
+  width: 50%;
+  background-color: rgb(212, 0, 0);
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+  padding: 0.5em;
+  margin: 0.25em;
+}
+
+#password-requirements {
+  margin: auto;
+}

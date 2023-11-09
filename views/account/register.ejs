@@ -19,13 +19,28 @@
 <!-- Register view -->
 <form action="/account/register" method="post">
     <label for="firstname">First Name:</label>
-    <input type="text" name="account_firstname" id="accountFirstname" required value="<%= locals.account_firstname %>">
+    <br>
+    <input type="text" name="account_firstname" id="firstname" required value="<%= locals.account_firstname %>">
+    <br>
     <label for="lastname">Last Name:</label>
+    <br>
     <input type="text" name="account_lastname" id="lastname" required value="<%= locals.account_lastname %>">
+    <br>
     <label for="email">Email:</label>
+    <br>
     <input type="email" name="account_email" id="email" required value="<%= locals.account_email %>">
+    <br>
     <label for="password">Password:</label>
+    <br>
     <input type="password" name="account_password" id="password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$" required>
-    <span>There must be at least 12 characters, one must be a number, one must be a lowercase letter, one must be a capital letter, and one must be a non-alphanumeric character.</span>
+    <br>
+    <span id="password-requirements-label">Password must contain at least 12 characters, including one of each:</span> 
+    <ul id="password-requirements">
+      <li>lowercase letter</li>
+      <li>uppercase letter</li>
+      <li>number</li>
+      <li>special character</li>
+    </ul>
+    <br>
     <input type="submit" value="Register">
 </form>
