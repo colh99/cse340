@@ -327,7 +327,12 @@ input[type="submit"] {
   border: 0;
   cursor: pointer;
   padding: 0.5em;
-  margin: 0.25em;
+  margin: 1em 0.25em 0.25em 0;
+}
+
+/* invalid input */
+input:invalid {
+  border: 3px solid red;
 }
 
 #password-requirements {
