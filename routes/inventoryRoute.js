@@ -29,4 +29,13 @@ router.post(
     utilities.handleErrors(invController.processAddClassification)
 )
 
+// Route to process add vehicle
+router.post(
+    "/add-vehicle",
+    invValidate.addVehicleRules(),
+    invValidate.checkAddVehicleData,
+    utilities.handleErrors(invController.processAddVehicle)
+)
+
+
 module.exports = router;
