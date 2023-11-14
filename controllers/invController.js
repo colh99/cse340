@@ -97,7 +97,7 @@ invCont.processAddClassification = async function (req, res, next) {
   
   if (result) {
     req.flash("notice", "Classification added successfully.")
-    res.redirect("/inv/management")
+    res.redirect("/inv")
   } else {
     req.flash("notice", "Sorry, there was an error adding the classification.")
     res.render("/inv/add-classification", {
@@ -139,7 +139,7 @@ invCont.processAddVehicle = async function (req, res, next) {
   
   if (result) {
     req.flash("notice", "Vehicle added successfully.")
-    res.redirect("/inv/management")
+    res.redirect("/inv")
   } else {
     req.flash("notice", "Sorry, there was an error adding the vehicle.")
     res.render("/inv/add-vehicle", {
