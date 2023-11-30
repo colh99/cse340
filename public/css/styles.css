@@ -301,6 +301,28 @@ nav a {
 }
 
 
+/************ Inventory Management Display ***************/
+
+/* table rules */
+table {
+  margin-top: 1em;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 0.5em;
+  border: 1px solid #333;
+}
+
+thead {
+  background-color: rgb(212, 0, 0);
+  color: #fff;
+  border-color: #fff;
+
+}
+
+
 /************ Forms ***************/
 
 form {
@@ -340,4 +362,10 @@ input:invalid {
 
 #password-requirements {
   margin: auto;
+}
+
+/* if disabled, change color */
+#updateSubmitButton:disabled {
+  background-color: #ccc;
+  color: #333;
 }
