@@ -161,7 +161,7 @@ async function updateAccount(req, res) {
     const accessToken = jwt.sign(accountData, process.env.ACCESS_TOKEN_SECRET, { expiresIn: 3600 * 1000 })
     res.cookie("jwt", accessToken, { httpOnly: true, maxAge: 3600 * 1000 })
 
-    req.flash("notice", `The account was successfully updated. First name: ${account_firstname}. Last name: ${account_lastname}. Email: ${account_email}.`)
+    req.flash("notice", `The account was successfully updated. Name: ${account_firstname} ${account_lastname}, Email: ${account_email}.`)
     res.redirect("/account/")
   } else {
     req.flash("notice", "Sorry, the update failed.")

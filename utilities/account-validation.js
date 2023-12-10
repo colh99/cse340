@@ -73,7 +73,6 @@ validate.updateAccountRules = () => {
     .withMessage("A valid email is required.")
     .custom(async (account_email, { req }) => {
       const existingAccount = await accountModel.getAccountByEmail(account_email);
-      console.log("Existing account found:", existingAccount.account_id.toString(), "Current account id:", req.body.account_id)
       if (existingAccount && existingAccount.account_id.toString() !== req.body.account_id) {
         throw new Error("Email exists. Please login or use different email.");
       }
